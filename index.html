@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Lens Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-mark">◉</span>
+            <div>
+                <strong>Crypto Lens</strong>
+                <small>Live market dashboard</small>
+            </div>
+        </div>
+        <div class="topbar-search">
+            <label for="search-input">Search coins</label>
+            <input id="search-input" type="search" placeholder="Search coins by name or symbol">
+        </div>
+        <div class="topbar-actions">
+            <span class="badge">Real-time API</span>
+            <span class="badge accent">CoinGecko</span>
+            <button id="theme-toggle" type="button" aria-label="Toggle theme">Toggle theme</button>
+        </div>
+    </header>
+
+    <main class="app-shell">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Live market snapshot</p>
+                <h1>Crypto Lens Tracker</h1>
+                <p class="subtitle">Track the top digital assets with instant refresh, smart filters, and live trend highlights.</p>
+            </div>
+            <div class="hero-meta">
+                <div class="hero-card">
+                    <span>Auto-refresh</span>
+                    <strong id="refresh-status">On</strong>
+                </div>
+                <div class="hero-card">
+                    <span>Coins displayed</span>
+                    <strong id="active-count">4</strong>
+                </div>
+                <div class="hero-card">
+                    <span>Last update</span>
+                    <strong id="last-updated">—</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-grid">
+            <article class="stat-card large">
+                <span>Market pulse</span>
+                <h2>Live crypto overview</h2>
+                <p>Search by coin, switch currencies, or pause auto-refresh while you explore the latest moves.</p>
+            </article>
+            <article class="stat-card">
+                <span>Top gainer</span>
+                <strong id="top-gainer">—</strong>
+            </article>
+            <article class="stat-card">
+                <span>Top loser</span>
+                <strong id="top-loser">—</strong>
+            </article>
+            <article class="stat-card">
+                <span>Avg 24h change</span>
+                <strong id="average-change">—</strong>
+            </article>
+        </section>
+
+        <section class="controls">
+            <div class="control-group">
+                <label for="currency-select">Currency</label>
+                <select id="currency-select">
+                    <option value="inr" selected>INR</option>
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="gbp">GBP</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="limit-select">Top coins</label>
+                <select id="limit-select">
+                    <option value="4" selected>Top 4</option>
+                    <option value="8">Top 8</option>
+                    <option value="12">Top 12</option>
+                    <option value="16">Top 16</option>
+                    <option value="20">Top 20</option>
+                    <option value="30">Top 30</option>
+                </select>
+            </div>
+            <div class="control-actions">
+                <button id="refresh-btn" type="button">Refresh Prices</button>
+                <button id="toggle-refresh" type="button">Pause auto refresh</button>
+            </div>
+        </section>
+
+        <div id="crypto-list" class="grid">
+            <p class="loading-text">Loading latest prices...</p>
+        </div>
+
+        <p class="hint">Use the filters to customize the dashboard, or search any coin name or ticker.</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
